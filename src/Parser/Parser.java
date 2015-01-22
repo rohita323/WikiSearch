@@ -22,7 +22,6 @@ public class Parser {
 	static final String TITLE = "title";
 	static final String TEXT = "text";
 	static final String REVISION = "revision";
-//	str = str.replaceAll("\\s*,\\s*", ",");
 
 	
 	@SuppressWarnings({ "unchecked", "null" })
@@ -68,9 +67,7 @@ public class Parser {
 							String txt = eventReader.getElementText().replaceAll("\\p{P}+|<|>|=|\\|", " ").replaceAll("\\s+"," ");
 							page.setText(Stop.Remove(txt));
 							event = eventReader.nextEvent();
-							System.out.println("Page Text: "+ page.getText());
-							
-							
+						
 							continue;
 						}
 					}
@@ -104,5 +101,4 @@ public class Parser {
 		}
 		return items;
 	}
-
 }
